@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Kleo - Computer Science & AI Student Portfolio"
+    />
+
+    <title>Portfolio | Junior Developer</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/toggle.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <div class="logo">Kleo.dev</div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Kleo</span></h1>
+
+        <h2>I am a <span class="typing"></span></h2>
+
+        <h2>Computer Science & AI Student</h2>
+
+        <p>
+          Passionate about technology, web development, and solving real-world
+          problems with code.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+          <a href="#" class="btn cv-btn" download>Download CV</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="images/kleo.jpeg" alt="Kleo profile photo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+      <h2>About Me</h2>
+
+      <p>
+        I am a Computer Science and Artificial Intelligence student who enjoys
+        building modern web applications and exploring new technologies. I am
+        passionate about problem solving, learning new programming concepts, and
+        creating solutions that make a real impact.
+      </p>
+
+      <p>
+        My goal is to grow as a developer while contributing to innovative
+        projects and collaborating with talented teams.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="skills">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-css3"></i>
+          <h3>CSS</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-angular"></i>
+          <h3>Angular</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-react"></i>
+          <h3>React</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-java"></i>
+          <h3>Java</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fas fa-database"></i>
+          <h3>C#</h3>
+        </div>
+        <div class="skill">
+          <i class="fas fa-database"></i>
+          <h3>SQL</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fab fa-git-alt"></i>
+          <h3>Git</h3>
+        </div>
+
+        <div class="skill">
+          <i class="fas fa-brain"></i>
+          <h3>AI</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="angular">Angular</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+      </div>
+
+      <div id="project-grid" class="project-grid"></div>
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="edu-card">
+        <h3>High School For Programming</h3>
+
+        <p>Shkolla Teknike "Gjergj Canco</p>
+
+        <p>2021 - 2025</p>
+      </div>
+      <div class="edu-card">
+        <h3>Bachelor in Computer Science & AI</h3>
+
+        <p>Western Balkan University</p>
+
+        <p>2025 - Present</p>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="section-container">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-grid">
+          <!-- Experience 1 -->
+          <div class="experience-card">
+            <div class="experience-header">
+              <span class="date">2025 - Present</span>
+              <span class="tag">Work / Internship</span>
+            </div>
+
+            <h3>Junior Developer / IT Support</h3>
+            <h4>Company Name</h4>
+
+            <p>
+              Contributed to web-related tasks, supported technical workflows,
+              and improved understanding of real-world development practices
+              through hands-on experience in a professional environment.
+            </p>
+
+            <ul>
+              <li>Worked on frontend improvements and UI adjustments</li>
+              <li>Collaborated on technical problem solving</li>
+              <li>Improved practical skills in web development workflows</li>
+            </ul>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="experience-card">
+            <div class="experience-header">
+              <span class="date">2024 - 2025</span>
+              <span class="tag">Projects</span>
+            </div>
+
+            <h3>Personal & Academic Developer Projects</h3>
+            <h4>Self-Driven Experience</h4>
+
+            <p>
+              Built portfolio, task management, and database-based projects
+              using modern frontend and programming tools while strengthening
+              problem-solving and clean code practices.
+            </p>
+
+            <ul>
+              <li>Developed responsive web interfaces</li>
+              <li>Built Java and SQL-based project logic</li>
+              <li>Practiced Angular, JavaScript, Git, and UI design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="section-container">
+        <h2 class="section-title">Testimonials</h2>
+
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Kleo demonstrated great problem-solving ability and strong
+              dedication while working on development tasks. His attention to
+              detail and willingness to learn made him a valuable member of the
+              team."
+            </p>
+
+            <div class="testimonial-author">
+              <h4>Manager Name</h4>
+              <span>Senior Developer</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "During his academic and personal projects, Kleo showed strong
+              curiosity and technical improvement. His portfolio projects
+              reflect practical development skills and good design thinking."
+            </p>
+
+            <div class="testimonial-author">
+              <h4>Professor Name</h4>
+              <span>Computer Science Lecturer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit" id="submit-btn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-spinner"></span>
+        </button>
+
+        <p id="form-status" class="form-status"></p>
+      </form>
+
+      <div class="social">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+
+    <div id="page-loader" class="page-loader hidden">
+      <div class="loader-box">
+        <div class="loader"></div>
+        <p>Sending your message...</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>© 2026 Kleo | Junior Developer Portfolio</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

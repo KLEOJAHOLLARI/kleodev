@@ -1,0 +1,131 @@
+:root {
+  --bg: #081630;
+  --bg-secondary: #0b1d3a;
+  --surface: #1e2d47;
+  --surface-hover: #273549;
+  --text: #ffffff;
+  --text-soft: #94a3b8;
+  --heading-soft: #cbd5e1;
+  --primary: #38bdf8;
+  --primary-hover: #0ea5e9;
+  --nav-bg: rgba(2, 6, 23, 0.95);
+  --border: rgba(255, 255, 255, 0.06);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode {
+  --bg: #f5f7fb;
+  --bg-secondary: #eaf1f8;
+  --surface: #ffffff;
+  --surface-hover: #f8fbff;
+  --text: #0f172a;
+  --text-soft: #64748b;
+  --heading-soft: #334155;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+body.light-mode .navbar {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+body.light-mode .project-card,
+body.light-mode .skill,
+body.light-mode .edu-card {
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.navbar {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo,
+.nav-links a,
+.menu-btn,
+#theme-toggle {
+  color: var(--text);
+}
+
+body.light-mode .nav-links a:hover {
+  color: var(--primary);
+}
+
+.skill,
+.project-card,
+.edu-card,
+.contact-form input,
+.contact-form textarea {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+body.light-mode .skill,
+body.light-mode .project-card,
+body.light-mode .edu-card {
+  border-radius: 18px;
+}
+
+.skill:hover,
+.project-card:hover {
+  background: var(--surface-hover);
+  transform: translateY(-6px);
+}
+
+.hero p,
+.about p,
+.project-card p,
+.edu-card p,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-soft);
+}
+
+.hero span,
+.typing {
+  color: var(--primary);
+}
+
+.tech span {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.footer {
+  background: transparent;
+  border-top: 1px solid var(--border);
+}
+
+.footer-container {
+  color: var(--text-soft);
+}
