@@ -75,10 +75,37 @@ themeToggle.addEventListener("click", () => {
 
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
-menuBtn.onclick = () => {
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
   navLinks.classList.toggle("active");
-};
+});
+
+/* close menu when clicking a nav link */
+navItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+
+/* close menu when clicking outside */
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("active") &&
+    !navLinks.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ) {
+    navLinks.classList.remove("active");
+  }
+});
+
+/* optional: close menu when screen becomes desktop */
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    navLinks.classList.remove("active");
+  }
+});
 
 ScrollReveal().reveal(".hero-text", {
   delay: 200,

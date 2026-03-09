@@ -400,6 +400,35 @@ section {
   background: var(--surface-hover);
 }
 
+.experience-card h4 a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.experience-card h4 a:hover {
+  text-decoration: underline;
+}
+.experience-header {
+  margin-bottom: 14px;
+}
+
+.experience-header .date {
+  font-size: 15px;
+  color: var(--primary);
+  font-weight: 600;
+}
+.date {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4cc2ff;
+  background: rgba(76, 194, 255, 0.08);
+  border: 1px solid rgba(76, 194, 255, 0.3);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
 .experience-top {
   display: flex;
   justify-content: space-between;
@@ -542,6 +571,12 @@ section {
 .contact-form textarea {
   min-height: 120px;
   resize: none;
+}
+.contact-subtitle {
+  color: var(--text-soft);
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .contact-form button {
