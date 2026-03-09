@@ -122,84 +122,61 @@ ScrollReveal().reveal(".project-card", {
 });
 
 // project fetching for now
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal developer portfolio built with HTML, CSS, and JavaScript.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://your-demo-link.com",
-    image: "images/project1.jpg",
-    category: "web",
-  },
-  {
-    title: "Task Manager",
-    description: "A web app for managing daily tasks with CRUD functionality.",
-    tech: ["Angular", "TypeScript", "CSS"],
-    github: "https://github.com/yourusername/task-manager",
-    demo: "https://your-demo-link.com",
-    image: "images/project2.jpg",
-    category: "angular",
-  },
-  {
-    title: "Student Database",
-    description: "A Java and SQL application for managing student records.",
-    tech: ["Java", "SQL"],
-    github: "https://github.com/yourusername/student-database",
-    demo: "https://your-demo-link.com",
-    image: "images/project3.jpg",
-    category: "java",
-  },
-  {
-    title: "AI Study Assistant",
-    description:
-      "A simple assistant project focused on AI-related ideas and productivity.",
-    tech: ["JavaScript", "AI"],
-    github: "https://github.com/yourusername/ai-assistant",
-    demo: "https://your-demo-link.com",
-    image: "images/project4.jpg",
-    category: "ai",
-  },
-];
 
-function renderProjects(filter = "all") {
+async function fetchGitHubProjects() {
   const projectGrid = document.getElementById("project-grid");
   if (!projectGrid) return;
 
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+  projectGrid.innerHTML = `<p class="projects-loading">Loading projects...</p>`;
 
-  projectGrid.innerHTML = filteredProjects
-    .map((project) => {
-      const techTags = project.tech
-        .map((item) => `<span>${item}</span>`)
-        .join("");
+  try {
+    const response = await fetch(
+      "https://api.github.com/users/KLEOJAHOLLARI/repos?sort=updated&per_page=6",
+    );
 
-      return `
+    if (!response.ok) {
+      throw new Error("Failed to fetch repositories");
+    }
+
+    const repos = await response.json();
+
+    const filteredRepos = repos.filter((repo) => !repo.fork);
+
+    if (filteredRepos.length === 0) {
+      projectGrid.innerHTML = `<p class="projects-loading">No public projects found.</p>`;
+      return;
+    }
+
+    projectGrid.innerHTML = filteredRepos
+      .map(
+        (repo) => `
       <div class="project-card">
-        <img src="${project.image}" alt="${project.title}">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
+        <div class="project-card-content">
+          <h3>${repo.name}</h3>
+          <p>${repo.description ? repo.description : "No description available for this project yet."}</p>
 
-        <div class="tech">
-          ${techTags}
-        </div>
+          <div class="tech">
+            <span>${repo.language ? repo.language : "Code Project"}</span>
+            <span>GitHub Repo</span>
+          </div>
 
-        <div class="links">
-          <a href="${project.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="${project.demo}" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <div class="links">
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">GitHub</a>
+            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ""}
+          </div>
         </div>
       </div>
-    `;
-    })
-    .join("");
+    `,
+      )
+      .join("");
+  } catch (error) {
+    projectGrid.innerHTML = `<p class="projects-loading">Unable to load GitHub projects right now.</p>`;
+    console.error(error);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  renderProjects();
+  fetchGitHubProjects();
 
   const filterButtons = document.querySelectorAll(".filter-btn");
 
@@ -207,11 +184,11 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       this.classList.add("active");
-      renderProjects(this.dataset.filter);
+      fetchGitHubProjects(this.dataset.filter);
     });
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  renderProjects();
+  fetchGitHubProjects();
 });

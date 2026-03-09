@@ -22,7 +22,7 @@ body {
 /* SECTIONS */
 
 section {
-  padding: 100px 0;
+  padding: 10px 0;
 }
 
 /* NAVBAR */
@@ -366,6 +366,71 @@ section {
   border-radius: 10px;
 }
 
+.future-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(76, 194, 255, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 41, 64, 1) 0%,
+    rgba(20, 35, 58, 1) 100%
+  );
+}
+
+.future-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(76, 194, 255, 0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.future-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.future-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4cc2ff;
+  background: rgba(76, 194, 255, 0.08);
+  border: 1px solid rgba(76, 194, 255, 0.28);
+  letter-spacing: 0.3px;
+}
+
+.future-year {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8fb9d6;
+}
+
+.future-school {
+  color: #4cc2ff;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.future-text {
+  color: #9fb0c7;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
 /* EXPERIENCE */
 .section-container {
   margin: 0 auto;
@@ -479,9 +544,9 @@ section {
 }
 
 /* TESTIMONIALS */
-.testimonials {
+/* .testimonials {
   padding: 10px 20px;
-}
+} */
 
 .testimonials h2 {
   font-size: 32px;
